@@ -12,7 +12,12 @@ function SidebarRow({ Icon, title }: Props) {
      rounded-full px-4 py-3 transition-all duration-200 hover:bg-gray-100"
     >
       <Icon className="h-6 w-6" />
-      <p className="group-hover:text-twitter">{title}</p>
+      <p
+        className="text-base font-light lg:text-xl
+      group-hover:text-twitter hidden md:inline-flex "
+      >
+        {title}
+      </p>
     </div>
   );
 }
