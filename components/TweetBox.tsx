@@ -6,15 +6,17 @@ import {
   PhotographIcon,
   SearchCircleIcon,
 } from "@heroicons/react/outline";
+import { useSession } from "next-auth/react";
 
 function TweetBox() {
   const [input, setInput] = useState<string>("");
+  const { data: session } = useSession();
 
   return (
     <div className="flex space-x-2 p-5">
       <img
         className=" mt-4 h-14 w-14 rounded-full object-cover"
-        src="https://links.papareact.com/gll"
+        src={session?.user?.image || "https://links.papareact.com/gll"}
         alt="profile-pic"
       />
       <div className="flex flex-1 items-center pl-2">
@@ -50,7 +52,7 @@ function TweetBox() {
               />
             </div>
             <button
-              disabled={!input}
+              disabled={!input || !session}
               className="rounded-full bg-twitter px-5 py-2 
             font-bold text-white disabled:opacity-40"
             >
