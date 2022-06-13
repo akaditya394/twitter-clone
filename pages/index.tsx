@@ -6,7 +6,7 @@ import Widgets from "../components/Widgets";
 
 const Home: NextPage = () => {
   return (
-    <div className="max-w-7xl mx-auto max-h-screen overflow-hidden">
+    <div className="max-w-6xl mx-auto max-h-screen overflow-hidden">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
